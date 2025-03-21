@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Tarea 2</title>
+  </head>
+  <body>
+    <h1>Tarea 2</h1>
+    <button id="getInfoBtn">Obtener Información</button>
+    <div id="info"></div>
+
+    <script>
+      const getInfoBtn = document.getElementById('getInfoBtn');
+      const infoDiv = document.getElementById('info');
+
+      getInfoBtn.addEventListener('click', async () => {
+        try {
+          const response = await fetch('/info');
+          const data = await response.json();
+          infoDiv.innerHTML = `
+            <p><strong>Nombre:</strong> ${data.nombre}</p>
+            <p><strong>Carné:</strong> ${data.carnet}</p>
+            <p><strong>Curso:</strong> ${data.curso}</p>
+          `;
+        } catch (error) {
+          console.error(error);
+          infoDiv.textContent = 'Error al obtener la información';
+        }
+      });
+    </script>
+  </body>
+</html>

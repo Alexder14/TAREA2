@@ -1,0 +1,15 @@
+{
+    "name": "tarea2",
+    "version": "1.0.0",
+    "description": "Tarea 2 - Despliegue con Docker",
+    "main": "index.js",
+    "scripts": {
+      "start": "node index.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "express": "^4.18.2"
+    }
+  }
